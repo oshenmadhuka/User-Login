@@ -23,7 +23,7 @@ const LoginForm = () => {
             localStorage.setItem('token', jwtToken);
 
             // Redirect to dashboard page after successful login
-            navigate('/dashboard');
+            navigate('/model');
         } catch (error) {
             console.error('Error logging in:', error);
             setLoginMessage('Invalid username or password');
