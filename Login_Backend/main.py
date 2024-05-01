@@ -1,7 +1,5 @@
 # in backend folder.
 # main.js
-
-
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
@@ -154,7 +152,7 @@ async def predict_attendance(request: PredictionRequest):
         predicted_attendance_rounded = int(round(predicted_attendance[0]))  # Round to nearest integer
 
         # Establish MongoDB connection
-        client = AsyncIOMotorClient("mongodb://localhost:27017/")
+        client = AsyncIOMotorClient("mongodb+srv://oshen:oshen@cluster0.h2my8yk.mongodb.net/")
         db = client["attendance_db"]
         collection = db["predictions"]
 
